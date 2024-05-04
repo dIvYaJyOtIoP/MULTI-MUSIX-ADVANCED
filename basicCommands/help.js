@@ -11,7 +11,6 @@ module.exports = {
     const serverCount = message.client.guilds.cache.size;
     const embed = new EmbedBuilder()
       .setColor('#2b71ec')     
-      .setDescription(`__**STATS :**__\n\n> **📊 Bot in servers:** ${serverCount}\n> **🟢 Bot Ping:** ${botPing}ms\n> **👑 Made By [GlaceYT](https://www.youtube.com/channel/UCPbAvYWBgnYhliJa1BIrv0A)**\n\n__**COMMANDS :**__ `)
       .addFields(
         // Basic commands category
         {
@@ -47,25 +46,22 @@ module.exports = {
         {
           name: '▶️  Utility',
           value: '`kick`, `ban`, `serverinfo`,`userinfo`, `clear`',
-          inline: true,
         }
       )
       .setThumbnail(botUser.avatarURL({ dynamic: true, format: 'png', size: 1024 }))
-      .setImage(`https://cdn.discordapp.com/attachments/1170652474563117138/1224660177039396876/MULTI_MUSIC_v1.5.png?ex=661e4cab&is=660bd7ab&hm=f7a542462fabaf9c1530ece5aa72597cff3ac032876bba46df5ddba7e122ea99&`);
-
     const button1 = new ButtonBuilder()
-      .setLabel('YouTube')
-      .setURL('https://www.youtube.com/channel/UCPbAvYWBgnYhliJa1BIrv0A')
+      .setLabel('Invite Me')
+      .setURL('https://dsc.gg/kalabott')
       .setStyle(ButtonStyle.Link);
 
     const button2 = new ButtonBuilder()
-      .setLabel('Discord')
-      .setURL('https://discord.gg/FUEHs7RCqz')
+      .setLabel('Support Server')
+      .setURL('https://discord.gg/Tsuzz2zHXe')
       .setStyle(ButtonStyle.Link);
 
     const button3 = new ButtonBuilder()
-      .setLabel('Code')
-      .setURL('https://replit.com/@BEASTGAMERS1/MULTI-MUSIC-BOT-v200?v=1')
+      .setLabel('Vote Me')
+      .setURL('https://top.gg/bot/1219975767056715797/vote')
       .setStyle(ButtonStyle.Link);
       
     const row = new ActionRowBuilder()
