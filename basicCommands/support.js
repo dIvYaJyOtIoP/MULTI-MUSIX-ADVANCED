@@ -8,8 +8,7 @@ module.exports = {
         const embed = new EmbedBuilder()
             .setColor('#FFFFFF')
             .setTitle('Support server')
-            .setDescription(`Click [here](${supportServerLink}) to join our server.\nWe will be there for you anytime ❤️`)
-            .setThumbnail(`https://images-ext-1.discordapp.net/external/rJT8V1XxxrF27NkqhADaBNs_yJOz9NhU5wQoV_O916I/%3Fsize%3D4096/https/cdn.discordapp.com/avatars/1219975767056715797/a4260652b63751e3aac1d415962842c4.webp?format=webp&width=570&height=570`)
+            .setDescription(`https://discord.gg/Tsuzz2zHXe`)
             .setTimestamp();
 
 
