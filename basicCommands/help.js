@@ -14,37 +14,23 @@ module.exports = {
       .addFields(
         // Basic commands category
         {
-          name: '▶️  Basic',
+          name: '<:globe:1236228342009565236> GENERAL',
           value: '`avatar`, `owner`, `support`, `invite`, `userinfo`',
-          inline: true,
         },
         // Music commands category
         {
-          name: '▶️  Music',
+          name: '<:Music:1236227837284061185> MUSIC',
           value: '`play`, `stop`, `history`,`volume`,`pause`,`resume`,`247`',
-          inline: true,
         },
         //fun category
         {
-          name: '▶️  Fun',
-          value: ' `ascii`, `joke`, `meme`, `roll`',
-          inline: true,
-        },
-        //image category
-        {
-          name: '▶️  Image',
-          value: '`cat`, `dog`',
-          inline: true,
+          name: ':frame_photo: IMAGE',
+          value: '`cat`, `dog` , `blush`, `cuddle`, `dance`, `slap`, `bonk`, `bully`, `hug`, `confused`, `kiss`, `pat`, `happy`, `smile`, `yes`, `highfive`, `wink`, `wave`, `thinking`, `sad`, `cry`, `stare`, `bored`, `scream`, `nervous`, `kill`.',
         },
         //anime category
-        {
-          name: '▶️  Anime',
-          value: '`<prefix>animecommands for more info`',
-          inline: true,
-        },
         // Utility commands category
         {
-          name: '▶️  Utility',
+          name: '<:zzutility:1236227946478305290> UTILITY',
           value: '`kick`, `ban`, `serverinfo`,`userinfo`, `clear`',
         }
       )
