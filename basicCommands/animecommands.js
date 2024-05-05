@@ -1,20 +1,50 @@
-const { EmbedBuilder } = require('discord.js');
-const db = require("../mongodb");
-module.exports = {
-  name: 'animecommands',
-  description: 'Display a list of available anime-related commands!',
-  execute(message, args) {
-    const embed = new EmbedBuilder()
-      .setColor('#FFFFFF')
-      .setTitle('Anime Commands')
-      .setDescription(`__**✅ List Of Availabe Interations**__\n\n▶️ __**Section 1 :**__\n  blush, cuddle, dance, slap, bonk, bully, hug, confused, kiss, pat, happy, smile.\n\n▶️ __**Section 2 :**__\n yes, highfive, wink, wave, thinking, sad, cry, stare, bored, scream, nervous, kill.\n`)
-      
-      .setImage(`https://cdn.discordapp.com/attachments/1140841446228897932/1142126954775068762/pxfuel.jpg`);
- const button1 = new ButtonBuilder()
-      .setLabel('Invite Me')
-      .setURL('https://dsc.gg/kalabott')
-      .setStyle(ButtonStyle.Link);
+const {EmbedBuilder} = require('discord.js');
+const config = require(`${process.cwd()}/config.js`);
 
-    message.reply({ embeds: [embed] });
-  },
-};
+module.exports = {
+    name: 'uptime',
+    category: '🛠️ utils',
+    description: 'Display the current uptime informations of the bot',
+
+    run: async(client, message, args) => {
+        
+        try {
+            var startingTime = Date.now();
+            var currentdate = new Date(); 
+            var datetime = "Date: " + currentdate.getDate() + "/"
+            + (currentdate.getMonth()+1)  + "/" 
+            + currentdate.getFullYear() + " Time: "  
+            + currentdate.getHours() + ":"  
+            + currentdate.getMinutes() + ":" 
+            + currentdate.getSeconds();
+
+            const embed = new EmbedBuilder()
+            .setTitle('✅ Uptime.')
+            .setAuthor({name: client.user.username, iconURL: client.user.displayAvatarURL({dynamic: false})})
+            .setThumbnail(client.user.displayAvatarURL())
+            .setColor(config.EMBED_COLORS.PURPLE)
+            .setDescription(`⌚ **My Local Time: \`${datetime}\`**\n` +
+            `📈 **Current Uptime: **` + 
+            `\`${timeformat(process.uptime())}\`\n` +
+            `\`\`\` \`\`\``)
+            .addFields([
+                {name: `Requested By:`, value: ("`" + message.member.user.username + "`"), inline: true}
+            ])
+
+            message.reply({embeds: [embed]})
+        }catch{}
+    }
+}
+
+function timeformat(timeInSeconds) {
+    const days = Math.floor((timeInSeconds % 31536000) / 86400);
+    const hours = Math.floor((timeInSeconds % 86400) / 3600);
+    const minutes = Math.floor((timeInSeconds % 3600) / 60);
+    const seconds = Math.round(timeInSeconds % 60);
+    return (
+      (days > 0 ? `${days} days, ` : "") +
+      (hours > 0 ? `${hours} hours, ` : "") +
+      (minutes > 0 ? `${minutes} minutes, ` : "") +
+      (seconds > 0 ? `${seconds} seconds` : "")
+    );
+}
