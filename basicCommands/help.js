@@ -10,7 +10,7 @@ module.exports = {
     const botPing = Date.now() - message.createdTimestamp;
     const serverCount = message.client.guilds.cache.size;
     const embed = new EmbedBuilder()
-      .setColor('#fffff')     
+      .setColor('#FFFFFF')     
       .addFields(
         // Basic commands category
         {
